@@ -9,3 +9,6 @@ def create_product(db: Session, produto: ProdutoCreate):
     db.refresh(db_produto)
     return db_produto
 
+def get_products(db: Session, skip: int = 0, limit: int = 10):
+    return db.query(Produto).offset(skip).limit(limit).all()
+

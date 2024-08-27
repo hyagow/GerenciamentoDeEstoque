@@ -12,3 +12,10 @@ def create_product(db: Session, produto: ProdutoCreate):
 def get_products(db: Session, skip: int = 0, limit: int = 10):
     return db.query(Produto).offset(skip).limit(limit).all()
 
+def create_movimentation(db: Session, movimentacao: MovimentacaoCreate):
+    db_movimentacao = Movimentacao(**movimentacao.dict())
+    db.add(db_movimentacao)
+    db.commit()
+    db.refresh(db_movimentacao)
+    return db_movimentacao
+

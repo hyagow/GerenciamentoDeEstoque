@@ -19,3 +19,10 @@ def create_movimentation(db: Session, movimentacao: MovimentacaoCreate):
     db.refresh(db_movimentacao)
     return db_movimentacao
 
+def create_localization(db: Session, localizacao: LocalizacaoCreate):
+    db_localizacao = Localizacao(**localizacao.dict())
+    db.add(db_localizacao)
+    db.commit()
+    db.refresh(db_localizacao)
+    return db_localizacao
+

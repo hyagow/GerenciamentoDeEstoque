@@ -1,16 +1,15 @@
-from fastapi import APIRouter, HTTPException, status
-from models.models import ProductModelRequest,ProductModelResponse
-from db.database import my_database
+from fastapi import APIRouter, HTTPException, status, Depends
 from sqlalchemy.orm import Session
 from db.database import SessionLocal
-from typing import List
+from schemas.schemas import Produto, Movimentacao, Localizacao, ProdutoCreate, MovimentacaoCreate, LocalizacaoCreate
+from crud.crud import create_products, get_product, create_movimentation, create_localization, get_relatory_inventory
 
 
 routers = APIRouter(tags=['Funções de Gerenciamento'])
 
-@routers.get('/products', 
-             response_model=List[ProductModelResponse], 
-             summary="Ler todos os produtos")
-def read_all_products() -> list:
-  return my_database
-
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

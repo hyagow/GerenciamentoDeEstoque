@@ -13,3 +13,8 @@ def get_db():
         yield db
     finally:
         db.close()
+
+@routers.post("/produtos/", response_model=Produto)
+def criar_produto(produto: ProdutoCreate, db: Session = Depends(get_db)):
+    return create_products(db=db, produto=produto)
+

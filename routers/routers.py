@@ -18,3 +18,7 @@ def get_db():
 def criar_produto(produto: ProdutoCreate, db: Session = Depends(get_db)):
     return create_products(db=db, produto=produto)
 
+@routers.get("/produtos/", response_model=list[Produto])
+def listar_produtos(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
+    return get_product(db=db, skip=skip, limit=limit)
+

@@ -22,3 +22,7 @@ def criar_produto(produto: ProdutoCreate, db: Session = Depends(get_db)):
 def listar_produtos(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
     return get_product(db=db, skip=skip, limit=limit)
 
+@routers.post("/movimentacoes/", response_model=Movimentacao)
+def criar_movimentacao(movimentacao: MovimentacaoCreate, db: Session = Depends(get_db)):
+    return create_movimentation(db=db, movimentacao=movimentacao)
+

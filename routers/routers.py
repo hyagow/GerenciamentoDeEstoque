@@ -26,3 +26,7 @@ def listar_produtos(skip: int = 0, limit: int = 10, db: Session = Depends(get_db
 def criar_movimentacao(movimentacao: MovimentacaoCreate, db: Session = Depends(get_db)):
     return create_movimentation(db=db, movimentacao=movimentacao)
 
+@routers.post("/localizacoes/", response_model=Localizacao)
+def criar_localizacao(localizacao: LocalizacaoCreate, db: Session = Depends(get_db)):
+    return create_localization(db=db, localizacao=localizacao)
+

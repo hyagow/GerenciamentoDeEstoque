@@ -30,3 +30,6 @@ def criar_movimentacao(movimentacao: MovimentacaoCreate, db: Session = Depends(g
 def criar_localizacao(localizacao: LocalizacaoCreate, db: Session = Depends(get_db)):
     return create_localization(db=db, localizacao=localizacao)
 
+@routers.get("/relatorio/inventario/", response_model=list[Produto])
+def relatorio_inventario(db: Session = Depends(get_db)):
+    return get_relatory_inventory(db=db)

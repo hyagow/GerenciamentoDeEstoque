@@ -2,12 +2,15 @@ import uvicorn
 from descricao import descricao
 from fastapi import FastAPI
 from routers import routers
-from db.database import engine, Base
+from db.database import engine
+from db.database import Base
 
 
 app = FastAPI(title='Sistema Gerenciador de Estoque', description=descricao)
 
 app.include_router(routers.routers)
+
+# Inicializa o banco de dados
 Base.metadata.create_all(bind=engine)
 
 if __name__ == '__main__':

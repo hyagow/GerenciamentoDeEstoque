@@ -14,3 +14,5 @@ class ProdutoBase(BaseModel):
 class ProdutoCreate(ProdutoBase):
     pass
 
+class Produto(ProdutoBase):
+    id: int

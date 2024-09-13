@@ -20,3 +20,9 @@ class Produto(ProdutoBase):
     class Config:
         orm_mode = True
 
+class MovimentacaoBase(BaseModel):
+    produto_id: int
+    quantidade: int
+    tipo_operacao: str
+    motivo: Optional[str] = None
+

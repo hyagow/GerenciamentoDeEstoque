@@ -26,3 +26,6 @@ class MovimentacaoBase(BaseModel):
     tipo_operacao: str
     motivo: Optional[str] = None
 
+class MovimentacaoCreate(MovimentacaoBase):
+    pass
+

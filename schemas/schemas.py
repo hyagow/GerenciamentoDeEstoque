@@ -29,3 +29,9 @@ class MovimentacaoBase(BaseModel):
 class MovimentacaoCreate(MovimentacaoBase):
     pass
 
+class Movimentacao(MovimentacaoBase):
+    id: int
+    data_operacao: datetime
+
+    class Config:
+        orm_mode = True

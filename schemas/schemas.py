@@ -35,3 +35,8 @@ class Movimentacao(MovimentacaoBase):
 
     class Config:
         orm_mode = True
+
+class LocalizacaoBase(BaseModel):
+    produto_id: int
+    localizacao_atual: str
+

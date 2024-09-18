@@ -40,3 +40,6 @@ class LocalizacaoBase(BaseModel):
     produto_id: int
     localizacao_atual: str
 
+class LocalizacaoCreate(LocalizacaoBase):
+    pass
+

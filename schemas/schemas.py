@@ -43,3 +43,9 @@ class LocalizacaoBase(BaseModel):
 class LocalizacaoCreate(LocalizacaoBase):
     pass
 
+class Localizacao(LocalizacaoBase):
+    id: int
+    data_atualizacao: datetime
+
+    class Config:
+        orm_mode = True

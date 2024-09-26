@@ -5,7 +5,7 @@ from routers import routers
 from db.database import engine
 from db.database import Base
 
-
+# instanciando api
 app = FastAPI(title='Sistema Gerenciador de Estoque', description=descricao)
 
 app.include_router(routers.routers)

@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
 
+# Classe que possui o modelo dos Produtos
 class ProdutoBase(BaseModel):
     codigo: str
     nome: str

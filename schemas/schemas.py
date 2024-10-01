@@ -12,6 +12,7 @@ class ProdutoBase(BaseModel):
     quantidade_inicial: int
     localizacao: Optional[str] = None
 
+# Classe somente para uso especifico (criação)
 class ProdutoCreate(ProdutoBase):
     pass
 

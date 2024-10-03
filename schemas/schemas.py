@@ -23,6 +23,7 @@ class Produto(ProdutoBase):
     class Config:
         orm_mode = True
 
+# Classe para o modelo das movimentações.
 class MovimentacaoBase(BaseModel):
     produto_id: int
     quantidade: int

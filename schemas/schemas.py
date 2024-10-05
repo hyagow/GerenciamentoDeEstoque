@@ -34,6 +34,7 @@ class MovimentacaoBase(BaseModel):
 class MovimentacaoCreate(MovimentacaoBase):
     pass
 
+# Classe para a movimentação.
 class Movimentacao(MovimentacaoBase):
     id: int
     data_operacao: datetime

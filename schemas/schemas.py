@@ -30,6 +30,7 @@ class MovimentacaoBase(BaseModel):
     tipo_operacao: str
     motivo: Optional[str] = None
 
+# Classe para a criação de movimentos.
 class MovimentacaoCreate(MovimentacaoBase):
     pass
 

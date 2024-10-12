@@ -51,6 +51,7 @@ class LocalizacaoBase(BaseModel):
 class LocalizacaoCreate(LocalizacaoBase):
     pass
 
+# Classe para a localização.
 class Localizacao(LocalizacaoBase):
     id: int
     data_atualizacao: datetime
